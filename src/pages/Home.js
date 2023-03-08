@@ -1,2 +1,5 @@
-// Hello - added by Vanessa
-//Hello - added by Samantha
+function Home (props) {
+    return <h1>Home Page</h1>;
+  }
+  
+  export default Home;
