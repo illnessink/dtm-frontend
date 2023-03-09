@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function Profile (props) {
     return (
-        <div >
-            <h1>{props.profile.displayName}</h1>
+        <div className='container'>
+            <h1>Hello, {props.profile.displayName}</h1>
             <img src={props.profile.photo} alt={props.profile.displayName} />
             <h3>{props.profile.age} yrs</h3>
             <h3>{props.profile.location}</h3>
@@ -19,9 +19,7 @@ function Profile (props) {
                 })
                 }
             </ul>
-
         </div>
-    
     );
 }
 
