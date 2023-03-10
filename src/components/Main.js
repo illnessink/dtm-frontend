@@ -1,3 +1,4 @@
+import { useEffect, useState, useCallback } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Profile from '../pages/Profile';
@@ -7,11 +8,60 @@ import MatchProfile from '../pages/MatchProfile';
 import Quiz from '../pages/Quiz';
 import Chat from '../pages/Chat';
 
-function Main(props) {
+function Main(props){
+  const [profile, setProfile] = useState(null);
+
+  const API_URL = "http://localhost:3001/profile/"
+
+  const getProfile = useCallback(async () =>{
+    try {
+      const token = await props.user.getIdToken();
+      const response = await fetch(API_URL, {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      });
+      const data = await response.json();
+      setProfile(data);
+    } catch (error) {
+      console.log(error)
+    }
+  }, [props.user]);
+
+  const createProfile = async (profile) => {
+    try {
+      if(props.user) {
+        const token = await props.user.getIdToken();
+        await fetch(API_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'Application/json',
+            'Authorization': 'Bearer ' + token
+          },
+          body: JSON.stringify(profile),
+        });
+        getProfile();
+      }
+    } catch (error) {
+
+    }
+  }
+  useEffect(()=>{
+    if(props.user){
+      getProfile();
+    } else {
+      setProfile(null);
+    }
+  }, [props.user, getProfile]);
+
+
+
+
     return (
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home user={props.user} profile={profile} createProfile={createProfile} />} />
             <Route path="/profile/:id" element={<Profile />} />
             <Route path="/matches" element={<Matches />} />
             <Route path="/matches/:id" element={<MatchProfile />} />
