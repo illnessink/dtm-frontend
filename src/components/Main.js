@@ -10,21 +10,21 @@ import Quiz from '../pages/Quiz';
 import Chat from '../pages/Chat';
 
 function Main(props){
-  const [profile, setProfile] = useState(null);
+  const [profiles, setProfiles] = useState(null);
 
   const API_URL = "http://localhost:3001/profiles/"
 
-  const getProfile = useCallback(async () =>{
+  const getProfiles = useCallback(async () =>{
     try {
       const token = await props.user.getIdToken();
-      const response = await fetch(API_URL + props.user.uid, {
+      const response = await fetch(API_URL, {
         method: 'GET',
         headers: {
           'Authorization': 'Bearer ' + token
         }
       });
       const data = await response.json();
-      setProfile(data);
+      setProfiles(data);
     } catch (error) {
       console.log(error)
     }
@@ -42,7 +42,7 @@ function Main(props){
           },
           body: JSON.stringify(profile),
         });
-        getProfile();
+        getProfiles();
       }
     } catch (error) {
         console.log(error);
@@ -51,11 +51,11 @@ function Main(props){
   
   useEffect(()=>{
     if(props.user){
-      getProfile();
+      getProfiles();
     } else {
-      setProfile(null);
+      setProfiles(null);
     }
-  }, [props.user, getProfile]);
+  }, [props.user, getProfiles]);
 
 
   return (
@@ -63,7 +63,7 @@ function Main(props){
       <Routes>
         <Route path="/" element={<Home user={props.user} createProfile={createProfile} />} />
         <Route path="/profile/new" element={<AddProfile user={props.user} createProfile={createProfile} />}/>
-        <Route path="/profile/:id" element={<Profile user={props.user} profile={profile} />} />
+        <Route path="/profile/:id" element={<Profile user={props.user} profiles={profiles} />} />
         <Route path="/matches" element={<Matches />} />
         <Route path="/matches/:id" element={<MatchProfile />} />
         <Route path="/quiz" element={<Quiz />} />
