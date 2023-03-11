@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AddProfile(props) {
+  const navigate = useNavigate(); 
   const [newProfile, setNewProfile] = useState({
     displayName: "",
     age: "",
@@ -38,6 +40,7 @@ function AddProfile(props) {
         photo: "",
         uid: props.user.uid,
     });
+    navigate(`/profile/${props.user.uid}`)
   };
 
   return (
