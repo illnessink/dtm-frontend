@@ -42,7 +42,7 @@ function AddProfile(props) {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} enctype='mulitpart/form-data'>
         <input
           type="text"
           value={newProfile.displayName}
@@ -50,7 +50,7 @@ function AddProfile(props) {
           onChange={handleChange}
         />
         <input
-          type="text"
+          type="file"
           value={newProfile.photo}
           name="photo"
           placeholder="photo URL"

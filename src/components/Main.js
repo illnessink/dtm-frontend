@@ -49,6 +49,7 @@ function Main(props){
     }
   }
 
+
   const updateProfile = async (profile, id) => {
     if (props.user) {
       const token = await props.user.getIdToken();
@@ -63,7 +64,7 @@ function Main(props){
       getProfiles();
     }
   } ; 
-  
+
   useEffect(()=>{
     if(props.user){
       getProfiles();
