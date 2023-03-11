@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function AddProfile(props) {
   const [newProfile, setNewProfile] = useState({
-    displayName: props.user.displayName,
+    displayName: "",
     age: "",
     location: "",
     gender: "",
@@ -10,8 +10,8 @@ function AddProfile(props) {
     bio: "",
     funFact: "",
     hobbies: [],
-    photo: props.user.photoURL,
-    uid: props.user.uid,
+    photo: "",
+    uid: "",
   });
 
   // handleChange for form
