@@ -7,6 +7,20 @@ function Header (props) {
             <Link to="/">
             <div>DTM</div>
             </Link>
+            { props.user ? 
+            <Link to={`/profile/${props.user.uid}`}>
+            <div>My Profile</div>
+            </Link>
+            :
+            <div className='navInvis'>My Profile</div>
+          }
+           { props.user ? 
+            <Link to={`/matches`}>
+            <div>My Matches</div>
+            </Link>
+            :
+            <div className='navInvis'>My Matches</div>
+          }
             <ul>
               { props.user ? 
               <>
