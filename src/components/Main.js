@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
+import AddProfile from '../pages/AddProfile';
 import Profile from '../pages/Profile';
 import EditProfile from '../pages/EditProfile';
 import Matches from '../pages/Matches';
@@ -16,7 +17,7 @@ function Main(props){
   const getProfile = useCallback(async () =>{
     try {
       const token = await props.user.getIdToken();
-      const response = await fetch(API_URL, {
+      const response = await fetch(API_URL + props.user.uid, {
         method: 'GET',
         headers: {
           'Authorization': 'Bearer ' + token
@@ -44,9 +45,10 @@ function Main(props){
         getProfile();
       }
     } catch (error) {
-
+        console.log(error);
     }
   }
+  
   useEffect(()=>{
     if(props.user){
       getProfile();
@@ -56,21 +58,20 @@ function Main(props){
   }, [props.user, getProfile]);
 
 
-
-
-    return (
-        <main>
-          <Routes>
-            <Route path="/" element={<Home user={props.user} profile={profile} createProfile={createProfile} />} />
-            <Route path="/profile/:id" element={<Profile />} />
-            <Route path="/matches" element={<Matches />} />
-            <Route path="/matches/:id" element={<MatchProfile />} />
-            <Route path="/quiz" element={<Quiz />} />
-            <Route path="/profile/:id/edit" element={<EditProfile />} />
-            <Route path="/chats/:id" element={<Chat />} />
-          </Routes>
-        </main>
-      );
-    }
+  return (
+    <main>
+      <Routes>
+        <Route path="/" element={<Home user={props.user} createProfile={createProfile} />} />
+        <Route path="/profile/new" element={<AddProfile user={props.user} createProfile={createProfile} />}/>
+        <Route path="/profile/:id" element={<Profile user={props.user} profile={profile} />} />
+        <Route path="/matches" element={<Matches />} />
+        <Route path="/matches/:id" element={<MatchProfile />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/profile/:id/edit" element={<EditProfile />} />
+        <Route path="/chats/:id" element={<Chat />} />
+      </Routes>
+    </main>
+  );
+}
 
 export default Main;
