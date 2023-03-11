@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
   function EditProfile(props) {
-    const { id } = useParams();
+  const navigate = useNavigate();  
+  const { id } = useParams();
   const profiles = props.profiles;
   const profile = profiles ? profiles.find((p) => p.uid === id) : null;
     
@@ -43,6 +44,7 @@ import { useParams, useNavigate } from "react-router-dom";
           photo: "",
           uid: props.user.uid,
       });
+      navigate(`/profile/${props.user.uid}`)
     };
   
     const loaded = () => {
@@ -124,7 +126,7 @@ import { useParams, useNavigate } from "react-router-dom";
               placeholder="please separate hobbies by a ',' "
               onChange={handleChange}
             />
-            <input type="submit" value="Edit Profile" />
+            <input type="submit" value="Submit Changes" />
           </form>
         </div>
       );
