@@ -12,7 +12,7 @@ import Chat from '../pages/Chat';
 function Main(props){
   const [profile, setProfile] = useState(null);
 
-  const API_URL = "http://localhost:3001/profile/"
+  const API_URL = "http://localhost:3001/profiles/"
 
   const getProfile = useCallback(async () =>{
     try {
