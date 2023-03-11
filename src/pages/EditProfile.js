@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
   function EditProfile(props) {
@@ -6,6 +6,7 @@ import { useParams, useNavigate } from "react-router-dom";
   const { id } = useParams();
   const profiles = props.profiles;
   const profile = profiles ? profiles.find((p) => p.uid === id) : null;
+  console.log(profile)
     
     const [editProfile, setEditProfile] = useState({
       displayName: '',
@@ -46,20 +47,28 @@ import { useParams, useNavigate } from "react-router-dom";
       });
       navigate(`/profile/${props.user.uid}`)
     };
+
+    useEffect(() => {
+      if(profile){
+        setEditProfile({
+            displayName: profile.displayName,
+            age: profile.age,
+            location: profile.location,
+            gender: profile.gender,
+            interestedIn: profile.interestedIn,
+            bio: profile.bio,
+            funFact: profile.funFact,
+            hobbies: profile.hobbies,
+            photo: profile.photo,
+            uid: id,
+          });
+      }
+    }, [])
   
     const loaded = () => {
-      // setEditProfile({
-      //   displayName: profile.displayName,
-      //   age: profile.age,
-      //   location: profile.location,
-      //   gender: profile.gender,
-      //   interestedIn: profile.interestedIn,
-      //   bio: profile.bio,
-      //   funFact: profile.funFact,
-      //   hobbies: profile.hobbies,
-      //   photo: profile.photo,
-      //   uid: id,
-      // });
+      console.log('profile: ', profile)
+
+      console.log('form state:', editProfile)
 
       return (
         <div className="container">
@@ -117,7 +126,7 @@ import { useParams, useNavigate } from "react-router-dom";
               value={editProfile.funFact}
               name="funFact"
               placeholder="Fun fact about me..."
-              
+              onChange={handleChange}
             />
             <input
               type="text"
