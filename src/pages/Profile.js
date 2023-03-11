@@ -1,4 +1,4 @@
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useParams, useNavigate } from 'react-router-dom'
 
 function Profile (props) {
@@ -12,7 +12,7 @@ function Profile (props) {
         return (
             <div className='container'>
                 <h1>Hello, {profile.displayName}</h1>
-                <img src={profile.photo} alt={profile.displayName} />
+                <img className='showPhoto' src={profile.photo} alt={profile.displayName} />
                 <h3>{profile.age} yrs</h3>
                 <h3>{profile.location}</h3>
                 <h3>Looking to meet: {profile.interestedIn}</h3>
@@ -27,6 +27,9 @@ function Profile (props) {
                     })
                     }
                 </ul>
+                <Link to={`/profile/${props.user.uid}/edit`}>
+                    <button>Edit Profile</button>
+                </Link>
             </div>
         );
     }
