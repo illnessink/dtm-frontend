@@ -48,7 +48,7 @@ function Main(props){
         console.log(error);
     }
   }
-  
+
   useEffect(()=>{
     if(props.user){
       getProfiles();
