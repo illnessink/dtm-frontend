@@ -48,6 +48,21 @@ function Main(props){
         console.log(error);
     }
   }
+
+  const updateProfile = async (profile, id) => {
+    if (props.user) {
+      const token = await props.user.getIdToken();
+      await fetch(API_URL + id, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'Application/json',
+          'Authorization': 'Bearer ' + token,
+        },
+        body: JSON.stringify(profile),
+      });
+      getProfiles();
+    }
+  } ; 
   
   useEffect(()=>{
     if(props.user){
@@ -67,7 +82,7 @@ function Main(props){
         <Route path="/matches" element={<Matches />} />
         <Route path="/matches/:id" element={<MatchProfile />} />
         <Route path="/quiz" element={<Quiz />} />
-        <Route path="/profile/:id/edit" element={<EditProfile />} />
+        <Route path="/profile/:id/edit" element={<EditProfile user={props.user} profiles={profiles} updateProfile={updateProfile} />} />
         <Route path="/chats/:id" element={<Chat />} />
       </Routes>
     </main>
