@@ -3,10 +3,13 @@ import { useParams, useNavigate } from 'react-router-dom'
 
 function Profile (props) {
     // const navigate = useNavigate();
+    const userID = props.user.uid;
     const { id } = useParams();
     const profiles = props.profiles;
     const profile = profiles ? profiles.find((p) => p.uid === id) : null;
     console.log(profile);
+    console.log(props.user.uid)
+    console.log({id})
 
     const loaded = () => {
         return (
@@ -27,9 +30,15 @@ function Profile (props) {
                     })
                     }
                 </ul>
+                { profile.uid === userID ? 
                 <Link to={`/profile/${props.user.uid}/edit`}>
                     <button>Edit Profile</button>
                 </Link>
+                :
+                <Link to={`/chats/${props.user.uid}`}>
+                    <button>Chat with {profile.displayName}</button>
+                </Link>
+             }
             </div>
         );
     }
