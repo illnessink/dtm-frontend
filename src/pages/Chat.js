@@ -1,5 +1,12 @@
 function Chat (props) {
-    return <h1>Chat Page</h1>;
+    return (
+    <div className="chat-feature" >
+      <ul id="messages"></ul>
+      <form id="form" action="">
+        <input id="input" autocomplete="off" /><button>Send</button>
+      </form>
+    </div> 
+    );
   }
   
   export default Chat;
