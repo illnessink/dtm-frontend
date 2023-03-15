@@ -26,7 +26,7 @@ function Profile (props) {
                 <h2>Hobbies:</h2>
                 <ul>
                     { profile.hobbies.map((hobby) => {
-                        return <li>{hobby}</li>
+                        return <li key="hobby">{hobby}</li>
                     })
                     }
                 </ul>
