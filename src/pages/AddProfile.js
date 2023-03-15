@@ -2,7 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function AddProfile(props) {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  const [images, setImages] = useState([]);
+  const [imageToRemove, setImageToRemove] = useState(null);
   const [newProfile, setNewProfile] = useState({
     displayName: "",
     age: "",
@@ -43,22 +45,51 @@ function AddProfile(props) {
     navigate(`/profile/${props.user.uid}`)
   };
 
+  function handleRemoveImg(imgObj){
+
+  }
+
+  function handleOpenWidget(){
+    var myWidget = window.cloudinary.createUploadWidget(
+      {
+      cloudName: 'dwr8ggqzr',
+      uploadPreset: 'carlhuv9',
+    },
+     (error, result) => {
+        if (!error && result && result.event === "success") {
+          setImages((prev)=>[...prev,{url:result.info.url, public_id: result.info.public_id}])
+        }
+      }
+    );
+    myWidget.open();
+  }
+
   return (
     <div className="container">
-      <form onSubmit={handleSubmit} enctype='mulitpart/form-data'>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={newProfile.displayName}
           name="displayName"
           onChange={handleChange}
         />
-        <input
+        {/* <input
           type="file"
           value={newProfile.photo}
           name="photo"
           placeholder="photo URL"
           onChange={handleChange}
-        />
+        /> */}
+         <button id="upload-widget" className='cloudinary-button' onClick={()=>handleOpenWidget()}>
+          Upload Picture
+        </button>
+        <div className='images-preview-container'>{images.map((image)=>(
+        <div className='image-preview'>
+          <img src={image.url}  />
+          </div>
+      )) } </div>
+
+
         <input
           type="text"
           value={newProfile.age}
@@ -111,6 +142,8 @@ function AddProfile(props) {
         <input type="submit" value="Create Profile" />
       </form>
     </div>
+
+
   );
 }
 
