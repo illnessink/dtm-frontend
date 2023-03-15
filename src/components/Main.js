@@ -82,7 +82,7 @@ function Main(props){
         <Route path="/profile/:id" element={<Profile user={props.user} profiles={profiles} />} />
         <Route path="/matches" element={<Matches user={props.user} profiles={profiles} />} />
         <Route path="/matches/:id" element={<MatchProfile />} />
-        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/quiz" element={<Quiz user={props.user} />} />
         <Route path="/profile/:id/edit" element={<EditProfile user={props.user} profiles={profiles} updateProfile={updateProfile} />} />
         <Route path="/chats/:id" element={<Chat />} />
       </Routes>
