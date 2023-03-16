@@ -7,6 +7,15 @@ body {
   font-family: 'Questrial', sans-serif;
 }
 
+#over-rideBootstrap {
+  background-color: #b8c1ec;
+}
+
+$body-bg: #b8c1ec !important;
+
+div.app {
+  background-color: #b8c1ec;
+}
 // --------------------------
 // VARIABLES
 // --------------------------
@@ -109,8 +118,10 @@ button#delete {
 // images
 // --------------------------
 
-img.showPhoto {
+img.showPhoto, img#editImage{
   width: 400px;
+  height: 250px;
+  object-fit: cover;
   border-radius: 10%;
 }
 
