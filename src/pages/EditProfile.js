@@ -104,7 +104,7 @@ import { useParams, useNavigate } from "react-router-dom";
         <div className='images-preview-container'>
 
         <div className='image-preview'>
-          <img src={editProfile.photo}  />
+          <img id="editImage" src={editProfile.photo}  />
 
           </div>
        </div>
