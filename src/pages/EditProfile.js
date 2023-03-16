@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+
+
   function EditProfile(props) {
   const navigate = useNavigate();
   const { id } = useParams();
-  const [images, setImages] = useState([]);
-  const [imageToRemove, setImageToRemove] = useState(null);
   const profiles = props.profiles;
   const profile = profiles ? profiles.find((p) => p.uid === id) : null;
   console.log(profile)
@@ -78,7 +78,6 @@ import { useParams, useNavigate } from "react-router-dom";
   }
 
   function handleOpenWidget(event){
-    event.preventDefault();
     var myWidget = window.cloudinary.createUploadWidget(
       {
       cloudName: 'dwr8ggqzr',
@@ -86,7 +85,7 @@ import { useParams, useNavigate } from "react-router-dom";
     },
      (error, result) => {
         if (!error && result && result.event === "success") {
-          setImages((prev)=>[...prev,{url:result.info.url, public_id: result.info.public_id}])
+          setEditProfile((formData) =>({...formData, photo: result.info.secure_url}));
         }
       }
     );
@@ -95,14 +94,31 @@ import { useParams, useNavigate } from "react-router-dom";
   }
 
       return (
+
         <div className="container">
+          <button id="upload-widget" className='cloudinary-button' onClick={()=>handleOpenWidget()}>
+          Upload Picture
+        </button>
           <form onSubmit={handleSubmit}>
+
+        <div className='images-preview-container'>
+
+        <div className='image-preview'>
+          <img src={editProfile.photo}  />
+
+          </div>
+       </div>
+
+
+
             <input
               type="text"
               value={editProfile.displayName}
               name="displayName"
               onChange={handleChange}
             />
+
+
             {/* <input
               type="text"
               value={editProfile.photo}
@@ -110,14 +126,7 @@ import { useParams, useNavigate } from "react-router-dom";
               placeholder="photo URL"
               onChange={handleChange}
             /> */}
-            <button id="upload-widget" className='cloudinary-button' onClick={()=>handleOpenWidget()}>
-          Upload Picture
-        </button>
-        <div className='images-preview-container'>{images.map((image)=>(
-        <div className='image-preview'>
-          <img src={image.url}  />
-          </div>
-      )) } </div>
+
             <input
               type="text"
               value={editProfile.age}

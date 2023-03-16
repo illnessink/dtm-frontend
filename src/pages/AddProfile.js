@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 function AddProfile(props) {
   const navigate = useNavigate();
-  const [images, setImages] = useState([]);
-  const [imageToRemove, setImageToRemove] = useState(null);
   const [newProfile, setNewProfile] = useState({
     displayName: "",
     age: "",
@@ -50,14 +48,16 @@ function AddProfile(props) {
   }
 
   function handleOpenWidget(){
-    var myWidget = window.cloudinary.createUploadWidget(
+
+    const myWidget = window.cloudinary.createUploadWidget(
       {
       cloudName: 'dwr8ggqzr',
       uploadPreset: 'carlhuv9',
     },
      (error, result) => {
         if (!error && result && result.event === "success") {
-          setImages((prev)=>[...prev,{url:result.info.url, public_id: result.info.public_id}])
+          // setImages((prev)=>[...prev,{url:result.info.url, public_id: result.info.public_id}])
+          setNewProfile((formData) =>({...formData, photo: result.info.secure_url}));
         }
       }
     );
@@ -66,29 +66,27 @@ function AddProfile(props) {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
+      <button id="upload-widget" className='cloudinary-button' onClick={()=>handleOpenWidget()}>
+          Upload Picture
+        </button>
+       <form onSubmit={handleSubmit}>
+
+
+        <div className='images-preview-container'>
+        <div className='image-preview'>
+          <img src={newProfile.photo} />
+          {/* {imageToRemove !=image.public_id && <i className="fa fa-times close-icon" onClick={()=> handleRemoveImg()}></i>} */}
+          </div>
+
+      </div>
+
+
         <input
           type="text"
           value={newProfile.displayName}
           name="displayName"
           onChange={handleChange}
         />
-        {/* <input
-          type="file"
-          value={newProfile.photo}
-          name="photo"
-          placeholder="photo URL"
-          onChange={handleChange}
-        /> */}
-         <button id="upload-widget" className='cloudinary-button' onClick={()=>handleOpenWidget()}>
-          Upload Picture
-        </button>
-        <div className='images-preview-container'>{images.map((image)=>(
-        <div className='image-preview'>
-          <img src={image.url}  />
-          </div>
-      )) } </div>
-
 
         <input
           type="text"
@@ -141,6 +139,7 @@ function AddProfile(props) {
         />
         <input type="submit" value="Create Profile" />
       </form>
+
     </div>
 
 
@@ -148,3 +147,13 @@ function AddProfile(props) {
 }
 
 export default AddProfile;
+
+
+
+ {/* <input
+          type="file"
+          value={newProfile.photo}
+          name="photo"
+          placeholder="photo URL"
+          onChange={handleChange}
+        /> */}
