@@ -65,7 +65,7 @@ import { useParams, useNavigate } from "react-router-dom";
             uid: id,
           });
       }
-    }, [])
+    }, [id, profile])
 
     const loaded = () => {
       console.log('profile: ', profile)
@@ -73,9 +73,9 @@ import { useParams, useNavigate } from "react-router-dom";
       console.log('form state:', editProfile)
 
 
-  function handleRemoveImg(imgObj){
+  // function handleRemoveImg(imgObj){
 
-  }
+  // }
 
   function handleOpenWidget(event){
     var myWidget = window.cloudinary.createUploadWidget(
@@ -104,7 +104,7 @@ import { useParams, useNavigate } from "react-router-dom";
         <div className='images-preview-container'>
 
         <div className='image-preview'>
-          <img id="editImage" src={editProfile.photo}  />
+          <img id="editImage" src={editProfile.photo} alt={profile.displayName} />
 
           </div>
        </div>
