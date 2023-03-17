@@ -14,7 +14,7 @@ function Chat (props) {
       socket.on("received_message", (data) => {
         setMessageReceived(data.message);
       })
-    }, [socket])
+    }, [])
 
     return (
     <div className="chat-feature" >

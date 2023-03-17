@@ -43,9 +43,9 @@ function AddProfile(props) {
     navigate(`/profile/${props.user.uid}`)
   };
 
-  function handleRemoveImg(imgObj){
+  // function handleRemoveImg(imgObj){
 
-  }
+  // }
 
   function handleOpenWidget(){
 
@@ -74,7 +74,7 @@ function AddProfile(props) {
 
         <div className='images-preview-container'>
         <div className='image-preview'>
-          <img src={newProfile.photo} />
+          <img src={newProfile.photo} alt={props.user.displayName}/>
           {/* {imageToRemove !=image.public_id && <i className="fa fa-times close-icon" onClick={()=> handleRemoveImg()}></i>} */}
           </div>
 
@@ -148,12 +148,3 @@ function AddProfile(props) {
 
 export default AddProfile;
 
-
-
- {/* <input
-          type="file"
-          value={newProfile.photo}
-          name="photo"
-          placeholder="photo URL"
-          onChange={handleChange}
-        /> */}
