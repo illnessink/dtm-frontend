@@ -22,7 +22,7 @@ function Chat (props) {
         <li>{messageReceived}</li>
       </ul>
       <form id="form" action="">
-        <input id="input" autocomplete="off" placeholder="Message..." onChange={(event) => {
+        <input id="input" autoComplete="off" placeholder="Message..." onChange={(event) => {
           setMessage(event.target.value);
         }} /><button onClick={sendMessage}>Send</button>
       </form>
