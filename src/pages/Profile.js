@@ -30,7 +30,7 @@ function Profile (props) {
                     })
                     }
                 </ul>
-                { profile.uid === userID ? 
+                { profile.uid === userID ?
                 <Link to={`/profile/${props.user.uid}/edit`}>
                     <button>Edit Profile</button>
                 </Link>
@@ -44,14 +44,18 @@ function Profile (props) {
     }
 
     const loading = () => {
-        return <h1>Loading...</h1>
+        return(
+        <Link to={'/profile/new'}>
+            <button> Make a Profile </button>
+        </Link>
+        )
     }
 
     return (
         <>
         {profile ? loaded() : loading()}
         </>
-    )   
+    )
 
 }
 
