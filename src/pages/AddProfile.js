@@ -86,6 +86,7 @@ function AddProfile(props) {
             type="text"
             value={newProfile.displayName}
             name="displayName"
+            placeholder="name"
             onChange={handleChange}
           />
   
