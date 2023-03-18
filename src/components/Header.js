@@ -5,7 +5,9 @@ function Header (props) {
     return (
         <nav className="nav">
             <Link to="/">
-            <div>DTM</div>
+            <div>
+              <img src="https://i.imgur.com/KrOXWVb.png" alt="down to match logo" id="logo"></img>
+            </div>
             </Link>
             { props.user ? 
             <Link to={`/profile/${props.user.uid}`}>
