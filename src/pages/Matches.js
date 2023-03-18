@@ -22,7 +22,7 @@ function Matches (props) {
 
   useEffect(()=>{
     getQuizzes();
-}, [props.user]);
+}, [props.user, getQuizzes]);
 
 
   // loaded function
@@ -36,7 +36,7 @@ function Matches (props) {
     const checkCompatibility = (uid) => {
       const matchQuiz = quizzes.find(quiz => quiz.uid === uid);
       let compatibilityScore = 0;
-      console.log("match quiz", matchQuiz);
+      // console.log("match quiz", matchQuiz);
       quizArray.forEach((elem) => {
         if (userQuiz[elem] === matchQuiz[elem]) {
           compatibilityScore += 10;
