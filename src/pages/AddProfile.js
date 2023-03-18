@@ -40,7 +40,7 @@ function AddProfile(props) {
         photo: "",
         uid: props.user.uid,
     });
-    navigate(`/profile/${props.user.uid}`)
+    navigate(`/quiz`)
   };
 
   // function handleRemoveImg(imgObj){
@@ -71,17 +71,17 @@ function AddProfile(props) {
             Upload Picture
           </button>
          <form onSubmit={handleSubmit}>
-  
-  
+
+
           <div className='images-preview-container'>
           <div className='image-preview'>
             <img src={newProfile.photo} alt={props.user.displayName}/>
             {/* {imageToRemove !=image.public_id && <i className="fa fa-times close-icon" onClick={()=> handleRemoveImg()}></i>} */}
             </div>
-  
+
         </div>
-  
-  
+
+
           <input
             type="text"
             value={newProfile.displayName}
@@ -90,7 +90,7 @@ function AddProfile(props) {
             onChange={handleChange}
             required
           />
-  
+
           <input
             type="text"
             value={newProfile.age}
@@ -142,7 +142,7 @@ function AddProfile(props) {
           />
           <input type="submit" value="Create Profile" />
         </form>
-  
+
       </div>
     );
   }
@@ -160,4 +160,3 @@ function AddProfile(props) {
 }
 
 export default AddProfile;
-
