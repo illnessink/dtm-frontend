@@ -72,6 +72,10 @@ li {
     }
   }
 
+  img {
+    height: 60px;
+  }
+
   a {
     @include white-text-black-bg;
     text-decoration: none;

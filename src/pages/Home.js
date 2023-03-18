@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 function Home (props) {
     return (
         <>
-            <h1>Down to Match Home Page</h1>
+            <img src="https://i.imgur.com/KrOXWVb.png" alt='down to match' ></img>
+            <br></br>
         { !props.user ?
             
             <button onClick={login}>Signup or Login!</button>
