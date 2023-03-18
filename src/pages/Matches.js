@@ -1,42 +1,54 @@
 import { Link } from 'react-router-dom';
-// import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 function Matches (props) {
-  // const [quizzes, setQuizzes] = useState(null);
+  const [quizzes, setQuizzes] = useState(null);
 
-  // const getQuizzes = async () =>{
-  //   try {
-  //     const token = await props.user.getIdToken();
-  //     const response = await fetch("http://localhost:3001/quizzes/", {
-  //       method: 'GET',
-  //       headers: {
-  //         'Authorization': 'Bearer ' + token
-  //       }
-  //     });
-  //     const data = await response.json();
-  //     setQuizzes(data);
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // };
+  const getQuizzes = async () =>{
+    try {
+      const token = await props.user.getIdToken();
+      const response = await fetch("http://localhost:3001/quizzes/", {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      });
+      const data = await response.json();
+      setQuizzes(data);
+    } catch (error) {
+      console.log(error)
+    }
+  };
 
-  // const userQuiz = quizzes.find(quiz => quiz.uid === props.user.uid)
+  useEffect(()=>{
+    getQuizzes();
+}, [props.user]);
 
-  // const checkCompatibility = (uid) => {
-  //   const matchQuiz = quizzes.find(quiz => quiz.uid === uid);
-  //   let compatibilityScore = 0;
-  //   console.log("match quiz", matchQuiz);
-  //   console.log("user quiz", userQuiz);
-  // }
-
-  // useEffect(()=>{
-  //     console.log(props.user)
-  //     getQuizzes();
-    
-  // }, [props.user]);
 
   // loaded function
   const loaded = () => {
+  
+    const userQuiz = quizzes.find(quiz => quiz.uid === props.user.uid)
+    // console.log("user quiz", userQuiz);
+  
+    const quizArray = ["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10"];
+  
+    const checkCompatibility = (uid) => {
+      const matchQuiz = quizzes.find(quiz => quiz.uid === uid);
+      let compatibilityScore = 0;
+      console.log("match quiz", matchQuiz);
+      quizArray.forEach((elem) => {
+        if (userQuiz[elem] === matchQuiz[elem]) {
+          compatibilityScore += 10;
+        }
+      })
+      return (
+        <h3>{compatibilityScore}% Match</h3>
+      );
+    }
+  
+    
+
     return props.profiles.map((profile) => (
       <div key={profile.uid} className="col-sm-12 col-md-6 col-lg-3" >
         <div className='card'>
@@ -45,7 +57,7 @@ function Matches (props) {
         </Link>
         <img id="matchImg" src={profile.photo} alt={profile.displayName} />
         <h3>Age: {profile.age}</h3>
-        {/* {checkCompatibility(profile.uid)} */}
+        {checkCompatibility(profile.uid)}
         </div>
       </div>
     ))
