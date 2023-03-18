@@ -39,16 +39,22 @@ function Matches (props) {
   
     const checkCompatibility = (uid) => {
       const matchQuiz = quizzes.find(quiz => quiz.uid === uid);
-      let compatibilityScore = 0;
-      // console.log("match quiz", matchQuiz);
-      quizArray.forEach((elem) => {
-        if (userQuiz[elem] === matchQuiz[elem]) {
-          compatibilityScore += 10;
-        }
-      })
-      return (
-        <h3>{compatibilityScore}% Match</h3>
-      );
+      if (matchQuiz === undefined){
+        return (
+          <h3>0% Match</h3>
+        );
+      } else {
+        let compatibilityScore = 0;
+        // console.log("match quiz", matchQuiz);
+        quizArray.forEach((elem) => {
+          if (userQuiz[elem] === matchQuiz[elem]) {
+            compatibilityScore += 10;
+          }
+        })
+        return (
+          <h3>{compatibilityScore}% Match</h3>
+        );
+      }
     }
   
     
