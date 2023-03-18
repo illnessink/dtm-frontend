@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function AddProfile(props) {
   const navigate = useNavigate();
   const [newProfile, setNewProfile] = useState({
-    displayName: "",
+    displayName: props.user.displayName,
     age: "",
     location: "",
     gender: "",
@@ -88,6 +88,7 @@ function AddProfile(props) {
             name="displayName"
             placeholder="name"
             onChange={handleChange}
+            required
           />
 
           <input
