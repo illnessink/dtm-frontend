@@ -65,7 +65,7 @@ function Matches (props) {
         <Link to={`/profile/${profile.uid}`}>
           <h1 className='card-title'>{profile.displayName}</h1>
         </Link>
-        <img id="matchImg" src={profile.photo} alt={profile.displayName} />
+        <img id="matchImg" src={profile.photo || "https://i.imgur.com/56zrFKC.jpg"} alt={profile.displayName} />
         <h3>Age: {profile.age}</h3>
         {checkCompatibility(profile.uid)}
         </div>

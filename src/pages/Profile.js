@@ -15,7 +15,7 @@ function Profile (props) {
         return (
             <div className='container'>
                 <h1>Hello, {profile.displayName}</h1>
-                <img className='showPhoto' src={profile.photo} alt={profile.displayName} />
+                <img className='showPhoto' src={profile.photo || "https://i.imgur.com/56zrFKC.jpg"} alt={profile.displayName} />
                 <h3>{profile.age} yrs</h3>
                 <h3>{profile.location}</h3>
                 <h3>Looking to meet: {profile.interestedIn}</h3>
