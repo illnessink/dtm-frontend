@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 function Matches (props) {
   const [quizzes, setQuizzes] = useState(null);
 
-  const getQuizzes = async () =>{
+  const getQuizzes = useCallback(async () =>{
     try {
       const token = await props.user.getIdToken();
-      const response = await fetch("http://localhost:3001/quizzes/", {
+      const response = await fetch("https://down-to-match-backend.herokuapp.com/quizzes/", {
         method: 'GET',
         headers: {
           'Authorization': 'Bearer ' + token
@@ -18,7 +18,7 @@ function Matches (props) {
     } catch (error) {
       console.log(error)
     }
-  };
+  },[props.user]);
 
   useEffect(()=>{
     if(props.user){
