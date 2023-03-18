@@ -21,8 +21,12 @@ function Matches (props) {
   };
 
   useEffect(()=>{
-    getQuizzes();
-}, [props.user, getQuizzes]);
+    if(props.user){
+      getQuizzes();
+    } else {
+      setQuizzes(null);
+    }
+  }, [props.user, getQuizzes]);
 
 
   // loaded function
