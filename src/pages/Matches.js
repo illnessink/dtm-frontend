@@ -76,7 +76,7 @@ function Matches (props) {
     <div className='container'>
       <h1>Swoon... Check out your Matches</h1>
       <div className='row'>
-      {props.profiles ? loaded() : loading}
+      {props.profiles && props.user && quizzes ? loaded() : loading()}
       </div>
     </div>
   )
