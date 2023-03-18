@@ -21,6 +21,20 @@ function Header (props) {
             :
             <div className='navInvis'>My Matches</div>
           }
+           { props.user ? 
+            <Link to={`/profile/new`}>
+            <div>New Profile</div>
+            </Link>
+            :
+            <div className='navInvis'>New Profile</div>
+          }
+           { props.user ? 
+            <Link to={`/quiz`}>
+            <div>Take Quiz</div>
+            </Link>
+            :
+            <div className='navInvis'>Take Quiz</div>
+          }
             <ul>
               { props.user ? 
               <>
