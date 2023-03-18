@@ -7,7 +7,7 @@ import EditProfile from '../pages/EditProfile';
 import Matches from '../pages/Matches';
 import MatchProfile from '../pages/MatchProfile';
 import Quiz from '../pages/Quiz';
-import Chat from '../pages/Chat';
+import ChatRoom from '../pages/ChatRoom';
 
 function Main(props){
   const [profiles, setProfiles] = useState(null);
@@ -84,7 +84,7 @@ function Main(props){
         <Route path="/matches/:id" element={<MatchProfile />} />
         <Route path="/quiz" element={<Quiz user={props.user} />} />
         <Route path="/profile/:id/edit" element={<EditProfile user={props.user} profiles={profiles} updateProfile={updateProfile} />} />
-        <Route path="/chats/:id" element={<Chat />} />
+        <Route path="/chats/:id" element={<ChatRoom />} />
       </Routes>
     </main>
   );
