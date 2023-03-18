@@ -12,7 +12,7 @@ import Chat from '../pages/Chat';
 function Main(props){
   const [profiles, setProfiles] = useState(null);
 
-  const API_URL = "http://localhost:3001/profiles/"
+  const API_URL = "https://down-to-match-backend.herokuapp.com/profiles/"
 
   const getProfiles = useCallback(async () =>{
     try {

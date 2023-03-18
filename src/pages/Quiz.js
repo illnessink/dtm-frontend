@@ -28,7 +28,7 @@ import { json } from "./json";
 
 function Quiz(props) {
     const quiz = new Model(json);
-    const API_URL = "http://localhost:3001/quizzes/";
+    const API_URL = "https://down-to-match-backend.herokuapp.com/quizzes/";
     quiz.onComplete.add( async (sender, options) => {
         if (props.user){
           const token = await props.user.getIdToken();
