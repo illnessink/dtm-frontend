@@ -118,6 +118,43 @@ button#delete {
   padding: 10px;
 }
 
+
+// --------------------------
+// profile
+// --------------------------
+
+img.showPhoto {
+  width: 400px;
+  object-fit: cover;
+  border-radius: 10%;
+  max-width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+div.align-items-center {
+  margin-top: 20px;
+}
+
+div.profile-info {
+  text-align: left;
+}
+
+p.about-info {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 23px;
+}
+
+h1{
+  font-family: 'Candal', sans-serif;
+  font-size: 50px;
+}
+
+@media (max-width: 991px) {
+  div.profile-info {
+    text-align: center;    
+  }
+}
+
+
 // --------------------------
 // images
 // --------------------------
@@ -126,7 +163,8 @@ img#matchImg {
   object-fit: cover;
 }
 
-img.showPhoto, img#editImage{
+
+img#editImage{
   width: 400px;
   height: 250px;
   object-fit: cover;
