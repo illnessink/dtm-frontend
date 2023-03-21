@@ -1,4 +1,4 @@
-DTM --> DOWN TO MATCH
+# DTM --> DOWN TO MATCH
 
 SEI Project 3
 Creators: Molly, Vanessa, Samantha & Dana
@@ -8,6 +8,58 @@ Link to site: https://downtomatch.netlify.app/
 
 ![Screen Shot 2023-03-21 at 10 27 06 AM](https://user-images.githubusercontent.com/97205531/226637444-283c6424-1878-4b1f-afb7-2a6b5c9e3de5.png)
 
+# User Story
+
+The user story to this app is for a user to be able to log in, or create a profile with the fields username and password.
+
+Once these fields are created, a user should be a ble to login to their account by entering their username and password.
+
+
+Once logged in, the user should be able to create their own profile, they should add the name, last name, location, looking to meet, about me section, fun fact and hobbies. 
+
+Once profile is complete, user should be able to take a compatibility quiz that consist of 10 yes or no questions. 
+
+Once user answers all questions they should be able to submit and see compatibility percentange with other users who have also created a profile and taken the quiz.
+
+The user can select one of the matches, see the matches information (name, age, location, about me section, bio and hobbies) and chat with that specific match. 
+
+#Technologies Used
+
+CSS 
+Javascript 
+HTML
+React
+Node.js
+Bootstrap
+Firebase
+Ajax
+Cloudinary
+Express
+MongoDB
+Heroku
+
+#Pages and Functionality
+
+
+![Screen Shot 2023-03-21 at 10 43 21 AM](https://user-images.githubusercontent.com/97205531/226649884-e3cb1b54-093b-446e-94c4-0095cee0c492.png)
+
+When page first loads user has the option to log in or sign up
+
+![Screen Shot 2023-03-21 at 10 49 25 AM](https://user-images.githubusercontent.com/97205531/226650147-1cff089f-10cc-4005-8bc9-7c2de6974d06.png)
+ 
+If user does not currently have a profile they should be promt to create a profile 
+
+![Screen Shot 2023-03-21 at 10 50 03 AM](https://user-images.githubusercontent.com/97205531/226650398-a7fc3869-ab9d-4654-9841-06dad8017772.png)
+
+Once profile is created user should be promted to take a compatibility quiz
+
+![Screen Shot 2023-03-21 at 10 50 11 AM](https://user-images.githubusercontent.com/97205531/226650671-82fd69f9-660b-4f7f-8c60-b121179a839c.png)
+
+Once user fills al 10 questions user should be able to click submit and that will save all user answers
+
+![Screen Shot 2023-03-21 at 11 13 04 AM](https://user-images.githubusercontent.com/97205531/226651407-36c4d5ab-104e-4919-957a-851b65e74d1b.png)
+
+User should be able to click on the "My Matches" tab to see all other users who have created a profile and see compatibility percentange based off quiz answers.
 
 
 
@@ -22,73 +74,4 @@ Link to site: https://downtomatch.netlify.app/
 
 
 
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
