@@ -23,7 +23,7 @@ Once user answers all questions they should be able to submit and see compatibil
 
 The user can select one of the matches, see the matches information (name, age, location, about me section, bio and hobbies) and chat with that specific match. 
 
-#Technologies Used
+# Technologies Used
 
 CSS 
 Javascript 
@@ -38,7 +38,7 @@ Express
 MongoDB
 Heroku
 
-#Pages and Functionality
+# Pages and Functionality
 
 
 ![Screen Shot 2023-03-21 at 10 43 21 AM](https://user-images.githubusercontent.com/97205531/226649884-e3cb1b54-093b-446e-94c4-0095cee0c492.png)
