@@ -28,18 +28,18 @@ The user can select one of the matches, see the matches information (name, age, 
 1. CSS 
 2. Javascript 
 3. HTML
-+React
-+Node.js
-+Bootstrap
-+Firebase
-+Ajax
-+Cloudinary
-+Express
-+MongoDB
-+Heroku
-+Git
-+Socket.io
-+Surveyjs.io
+4. React
+5. Node.js
+6. Bootstrap
+7. Firebase
+8. Ajax
+9. Cloudinary
+10.Express
+11.MongoDB
+12.Heroku
+13.Git
+14.Socket.io
+15.Surveyjs.io
 
 # Pages and Functionality
 
