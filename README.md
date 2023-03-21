@@ -66,9 +66,6 @@ User should be able to click on the "My Matches" tab to see all other users who 
 
 Once user clicks on a specific match, user should be able to see the their matches profile and details. User should also be able initiate a chat with that match 
 
-
-![Screen Shot 2023-03-21 at 3 28 40 PM](https://user-images.githubusercontent.com/97205531/226720638-cf7c3f14-ef56-4c81-bf66-6021931aab88.png)
-
 Once user clicks on "chat with" option user will be taken to a page to join a room chat with that match 
 
 ![Screen Shot 2023-03-21 at 3 32 46 PM](https://user-images.githubusercontent.com/97205531/226720999-38c90ed6-d4a7-4e8c-b785-c92b2a6f5cc4.png)
