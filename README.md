@@ -25,9 +25,9 @@ The user can select one of the matches, see the matches information (name, age, 
 
 # Technologies Used
 
-+CSS 
-+Javascript 
-+HTML
+1. CSS 
+2. Javascript 
+3. HTML
 +React
 +Node.js
 +Bootstrap
