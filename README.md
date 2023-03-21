@@ -25,19 +25,21 @@ The user can select one of the matches, see the matches information (name, age, 
 
 # Technologies Used
 
-CSS 
-Javascript 
-HTML
-React
-Node.js
-Bootstrap
-Firebase
-Ajax
-Cloudinary
-Express
-MongoDB
-Heroku
-Git
+1.  CSS 
+2.  Javascript 
+3.  HTML
+4.  React
+5.  Node.js
+6.  Bootstrap
+7.  Firebase
+8.  Ajax
+9.  Cloudinary
+10. Express
+11. MongoDB
+12. Heroku
+13. Git
+14. Socket.io
+15. Surveyjs.io
 
 # Pages and Functionality
 
@@ -66,14 +68,12 @@ User should be able to click on the "My Matches" tab to see all other users who 
 
 Once user clicks on a specific match, user should be able to see the their matches profile and details. User should also be able initiate a chat with that match 
 
-Once user clicks on "chat with" option user will be taken to a page to join a room chat with that match 
+![image](https://user-images.githubusercontent.com/97205531/226738927-9e1d104d-7285-475e-abe4-1bddae1f74b3.png)
 
-![Screen Shot 2023-03-21 at 3 32 46 PM](https://user-images.githubusercontent.com/97205531/226720999-38c90ed6-d4a7-4e8c-b785-c92b2a6f5cc4.png)
+User should be able to chat with their match and recive a message back
 
+![image](https://user-images.githubusercontent.com/97205531/226739645-6dadf223-dc0f-445b-bf77-88b2714118a8.png)
 
-Users will be able to chat with each other with the room chat option
-
-![Screen Shot 2023-03-21 at 3 34 39 PM](https://user-images.githubusercontent.com/97205531/226721587-f135a7d3-80bc-4319-af6f-82c58a4bcfc5.png)
 
 # Original Wire Frame 
 
