@@ -113,8 +113,17 @@ h2.card-title, h5.matches-age {
   color: $maincolor;
   padding-top: 5px;
 }
-h1.card-title ::after {
+h2.card-title ::after {
+  text-decoration: none;
+}
+div.card {
+  a:hover {
     text-decoration: none;
+  }
+}
+h2.card-title:hover {
+  color: #eebbc3;
+  text-decoration: none;
 }
 h4.compat-h4 {
   color: #deadb4;
