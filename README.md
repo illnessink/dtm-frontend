@@ -37,6 +37,7 @@ Cloudinary
 Express
 MongoDB
 Heroku
+Git
 
 # Pages and Functionality
 
@@ -55,19 +56,31 @@ Once profile is created user should be promted to take a compatibility quiz
 
 ![Screen Shot 2023-03-21 at 10 50 11 AM](https://user-images.githubusercontent.com/97205531/226650671-82fd69f9-660b-4f7f-8c60-b121179a839c.png)
 
-Once user fills al 10 questions user should be able to click submit and that will save all user answers
+Once user fills al 10 questions user should be able to click "complete" button and that will save all user answers
 
 ![Screen Shot 2023-03-21 at 11 13 04 AM](https://user-images.githubusercontent.com/97205531/226651407-36c4d5ab-104e-4919-957a-851b65e74d1b.png)
 
 User should be able to click on the "My Matches" tab to see all other users who have created a profile and see compatibility percentange based off quiz answers.
 
+![Screen Shot 2023-03-21 at 3 28 40 PM](https://user-images.githubusercontent.com/97205531/226720104-204968aa-d5e9-4032-91f6-2abe456e14b1.png)
+
+Once user clicks on a specific match, user should be able to see the their matches profile and details. User should also be able initiate a chat with that match 
 
 
+![Screen Shot 2023-03-21 at 3 28 40 PM](https://user-images.githubusercontent.com/97205531/226720638-cf7c3f14-ef56-4c81-bf66-6021931aab88.png)
+
+Once user clicks on "chat with" option user will be taken to a page to join a room chat with that match 
+
+![Screen Shot 2023-03-21 at 3 32 46 PM](https://user-images.githubusercontent.com/97205531/226720999-38c90ed6-d4a7-4e8c-b785-c92b2a6f5cc4.png)
 
 
+Users will be able to chat with each other with the room chat option
 
+![Screen Shot 2023-03-21 at 3 34 39 PM](https://user-images.githubusercontent.com/97205531/226721587-f135a7d3-80bc-4319-af6f-82c58a4bcfc5.png)
 
+# Original Wire Frame 
 
+![Screen Shot 2023-03-21 at 3 37 42 PM](https://user-images.githubusercontent.com/97205531/226722080-c07465c0-249d-4bf8-8bda-272c66a43186.png)
 
 
 
