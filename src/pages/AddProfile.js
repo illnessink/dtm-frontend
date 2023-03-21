@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 function AddProfile(props) {
   const navigate = useNavigate();
@@ -70,7 +72,7 @@ function AddProfile(props) {
         <button id="upload-widget" className='cloudinary-button' onClick={()=>handleOpenWidget()}>
             Upload Picture
           </button>
-         <form onSubmit={handleSubmit}>
+         <Form onSubmit={handleSubmit}>
 
 
           <div className='images-preview-container'>
@@ -81,8 +83,9 @@ function AddProfile(props) {
 
         </div>
 
-
-          <input
+        <Form.Group className="mb-3">
+          <Form.Label>Name:</Form.Label>
+          <Form.Control
             type="text"
             value={newProfile.displayName}
             name="displayName"
@@ -90,58 +93,80 @@ function AddProfile(props) {
             onChange={handleChange}
             required
           />
-
-          <input
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Age:</Form.Label>
+          <Form.Control
             type="text"
             value={newProfile.age}
             name="age"
             placeholder="age"
             onChange={handleChange}
           />
-          <input
-            type="text"
-            value={newProfile.location}
-            name="location"
-            placeholder="location"
-            onChange={handleChange}
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Location:</Form.Label>
+          <Form.Control
+          type="text"
+          value={newProfile.location}
+          name="location"
+          placeholder="location"
+          onChange={handleChange}
           />
-          <input
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Gender:</Form.Label>
+          <Form.Control 
             type="text"
             value={newProfile.gender}
             name="gender"
             placeholder="gender"
             onChange={handleChange}
           />
-          <input
-            type="text"
-            value={newProfile.interestedIn}
-            name="interestedIn"
-            placeholder="Looking to meet..."
-            onChange={handleChange}
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Looking to meet...</Form.Label>
+          <Form.Control 
+          type="text"
+          value={newProfile.interestedIn}
+          name="interestedIn"
+          placeholder="Looking to meet..."
+          onChange={handleChange}
           />
-          <input
-            type="text"
-            value={newProfile.bio}
-            name="bio"
-            placeholder="A little about me..."
-            onChange={handleChange}
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>A little bit about me...</Form.Label>
+          <Form.Control 
+          type="text"
+          value={newProfile.bio}
+          name="bio"
+          placeholder="A little about me..."
+          onChange={handleChange}
           />
-          <input
-            type="text"
-            value={newProfile.funFact}
-            name="funFact"
-            placeholder="Fun fact about me..."
-            onChange={handleChange}
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Fun Fact about Me...</Form.Label>
+          <Form.Control 
+          type="text"
+          value={newProfile.funFact}
+          name="funFact"
+          placeholder="Fun fact about me..."
+          onChange={handleChange}
           />
-          <input
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Hobbies...</Form.Label>
+          <Form.Control 
             type="text"
             value={newProfile.hobbies}
             name="hobbies"
-            placeholder="please separate hobbies by a ',' "
             onChange={handleChange}
           />
-          <input type="submit" value="Create Profile" />
-        </form>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Create Profile
+        </Button>
+        </Form>
 
       </div>
     );
