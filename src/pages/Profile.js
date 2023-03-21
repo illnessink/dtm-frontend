@@ -44,7 +44,7 @@ function Profile(props) {
                                 <button type="button" class="btn btn-primary">Edit Profile</button>
                             </Link>
                             :
-                            <Link to={`/chats/${props.user.uid}`}>
+                            <Link to={`/chats/${props.user.uid}/${profile.uid}`}>
                                 <button type="button" class="btn btn-primary">Chat with {profile.displayName}</button>
                             </Link>
                         }
