@@ -16,6 +16,10 @@ $body-bg: #b8c1ec !important;
 div.app {
   background-color: #b8c1ec;
 }
+
+div.container {
+  padding: 0;
+}
 // --------------------------
 // VARIABLES
 // --------------------------
@@ -35,55 +39,82 @@ $contrastcolor: #fffffe;
 // --------------------------
 // Header
 // --------------------------
+ 
+div.nav-container.container {
+  margin: 0;
+  max-width: 100vw!important
+}
+.nav-bar {
+  margin-bottom: 20px;
+  position: sticky;
+}
+
+.main-div {
+  margin-top: 100px;
+}
+nav#nav-color {
+  background-color: $maincolor;
+}
+
+button.home-button {
+  border: none;
+  color: white;
+  background-color: inherit;
+  cursor: pointer;
+  margin-left: 15px;
+}
 
 div.navInvis {
-  color: $maincolor
+  background-color: #232946!important
+}
+a.nav-link {
+  color:white;
+  margin-left: 30px;
 }
 
-li {
-  list-style: none;
+div#welcome {
+  color: #fff;
+  margin-right: 20px;
+  padding-top: 14px;
 }
 
-.nav {
-  @include white-text-black-bg;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 80px;
-
-  ul {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    
-    li {
-      img {
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-      }
-      margin-right: 16px;
-      button {
-        border: none;
-        color: inherit;
-        background-color: inherit;
-        cursor: pointer;
-      }
-    }
+@media (max-width: 575px) {
+  div.user-nav {
+      display:flex;
+      flex-direction: column;
   }
-
-  img {
-    height: 60px;
+  img.rounded-circle {
+    display: none;
   }
+  div#welcome {
+    display: none;
+  }
+}
 
-  a {
-    @include white-text-black-bg;
+// --------------------------
+// Matches
+// --------------------------
+h1.matches-h1 {
+  margin-bottom: 20px;
+  font-family: 'Candal', sans-serif;
+}
+h2.card-title, h5.matches-age {
+  color: $maincolor;
+  padding-top: 5px;
+}
+h1.card-title ::after {
     text-decoration: none;
-    div {
-      margin: 10px;
-      font-size: large;
-    }
-  }
+}
+h4.compat-h4 {
+  color: #deadb4;
+}
+img#matchImg {
+  border-radius: 5px;
+  margin: 0 8px 0 8px;
+}
+div.card {
+  margin-bottom: 10px;
+  background-color: #fffffee7
 }
 
 // --------------------------
@@ -143,9 +174,8 @@ p.about-info {
   font-size: 23px;
 }
 
-h1{
+h1.profile-h1{
   font-family: 'Candal', sans-serif;
-  font-size: 50px;
 }
 
 @media (max-width: 991px) {
@@ -375,3 +405,52 @@ img#editImage{
 .hide {
   opacity: 0 !important;
 }
+
+
+// .nav {
+//   @include white-text-black-bg;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   height: 80px;
+
+//   ul.user-nav {
+//     display: flex;
+//     list-style: none;
+//     align-items: center;
+
+//     ul {
+//       display: flex;
+//       list-style: none;
+//       align-items: center;
+//     }
+    
+//     li {
+//       img {
+//         height: 50px;
+//         width: 50px;
+//         border-radius: 50%;
+//       }
+//       margin-right: 16px;
+//       button {
+//         border: none;
+//         color: inherit;
+//         background-color: inherit;
+//         cursor: pointer;
+//       }
+//     }
+//   }
+
+//   img {
+//     height: 60px;
+//   }
+
+//   a {
+//     @include white-text-black-bg;
+//     text-decoration: none;
+//     div {
+//       margin: 10px;
+//       font-size: large;
+//     }
+//   }
+// }
