@@ -117,7 +117,7 @@ function Chat({ id1, id2, name1, name2, pic1, pic2, user }) {
             return (
               <div
                 className="message"
-                id={!messageContent.myself ? "you" : "other"}
+                id={messageContent.myself ? "you" : "other"}
               >
                 <div>
                   <div className="message-content">
@@ -140,11 +140,11 @@ function Chat({ id1, id2, name1, name2, pic1, pic2, user }) {
           onChange={(event) => {
             setCurrentMessage(event.target.value);
           }}
-        //   onKeyPress={(event) => {
-        //     event.key === "Enter" && sendMessage();
-        //   }}
+          onKeyPress={(event) => {
+            event.key === "Enter" && sendMessage();
+          }}
         />
-        <button onClick={sendMessage}>&#9658;</button>
+        <button type="submit" onClick={sendMessage}>&#9658;</button>
       </div>
     </div>
   );
