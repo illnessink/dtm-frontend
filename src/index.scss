@@ -253,6 +253,7 @@ img#editImage{
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin: auto;
 }
 
 .joinChatContainer h3 {
@@ -287,12 +288,14 @@ img#editImage{
 }
 
 .chat-window {
-  width: 300px;
+  width: 500px;
   height: 420px;
+  margin: auto;
+  margin-top: 40px;
 }
 
 .chat-window p {
-  margin: 0;
+  margin: auto;
 }
 .chat-window .chat-header {
   height: 45px;
@@ -336,7 +339,7 @@ img#editImage{
   width: auto;
   height: auto;
   min-height: 40px;
-  max-width: 120px;
+  max-width: 250px;
   background-color: #43a047;
   border-radius: 5px;
   color: white;
@@ -350,29 +353,29 @@ img#editImage{
   word-break: break-word;
 }
 
-#you {
+#other {
   justify-content: flex-start;
 }
 
-#you .message-content {
+#other .message-content {
   justify-content: flex-start;
 }
 
-#you .message-meta {
+#other .message-meta {
   justify-content: flex-start;
   margin-left: 5px;
 }
 
-#other {
+#you {
   justify-content: flex-end;
 }
 
-#other .message-content {
+#you .message-content {
   justify-content: flex-end;
   background-color: cornflowerblue;
 }
 
-#other .message-meta {
+#you .message-meta {
   justify-content: flex-end;
   margin-right: 5px;
 }
