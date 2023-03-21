@@ -63,6 +63,9 @@ button.home-button {
   cursor: pointer;
   margin-left: 15px;
 }
+button.home-button:hover {
+  color: #eebbc3;
+}
 
 div.navInvis {
   background-color: #232946!important
@@ -71,6 +74,14 @@ a.nav-link {
   color:white;
   margin-left: 30px;
 }
+
+div.nav-text {
+  color:#fffffe;
+}
+div.nav-text:hover {
+  color: #eebbc3;
+}
+
 
 div#welcome {
   color: #fff;

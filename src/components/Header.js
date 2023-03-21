@@ -17,14 +17,14 @@ function Header(props) {
             <Nav className="me-auto">
               {props.user ?
                 <Link to={`/profile/${props.user.uid}`} className="nav-link">
-                  <div>My Profile</div>
+                  <div className="nav-text">My Profile</div>
                 </Link>
                 :
                 <div className='navInvis'>My Profile</div>
               }
               {props.user ?
                 <Link to={`/matches`} className="nav-link">
-                  <div>My Matches</div>
+                  <div className="nav-text">My Matches</div>
                 </Link>
                 :
                 <div className='navInvis'>My Matches</div>
