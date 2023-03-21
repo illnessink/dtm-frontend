@@ -15,7 +15,9 @@ function App() {
   return (
     <div className="App">
       <Header user={user}/>
+      <div className='main-div'>
       <Main user={user} />
+      </div>
     </div>
   );
 }

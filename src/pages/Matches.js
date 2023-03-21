@@ -41,7 +41,7 @@ function Matches (props) {
       const matchQuiz = quizzes.find(quiz => quiz.uid === uid);
       if (matchQuiz === undefined){
         return (
-          <h3>0% Match</h3>
+          <h4 className="compat-h4">0% Match</h4>
         );
       } else {
         let compatibilityScore = 0;
@@ -52,7 +52,7 @@ function Matches (props) {
           }
         })
         return (
-          <h3>{compatibilityScore}% Match</h3>
+          <h4 className="compat-h4">{compatibilityScore}% Match</h4>
         );
       }
     }
@@ -63,10 +63,10 @@ function Matches (props) {
       <div key={profile.uid} className="col-sm-12 col-md-6 col-lg-3" >
         <div className='card'>
         <Link to={`/profile/${profile.uid}`}>
-          <h1 className='card-title'>{profile.displayName}</h1>
+          <h2 className='card-title'>{profile.displayName}</h2>
         </Link>
         <img id="matchImg" src={profile.photo || "https://i.imgur.com/56zrFKC.jpg"} alt={profile.displayName} />
-        <h3>Age: {profile.age}</h3>
+        <h5 className="matches-age">Age: {profile.age}</h5>
         {checkCompatibility(profile.uid)}
         </div>
       </div>
@@ -80,7 +80,7 @@ function Matches (props) {
 
   return (
     <div className='container'>
-      <h1>Swoon... Check out your Matches</h1>
+      <h1 className='matches-h1'>Swoon... Check out your Matches</h1>
       <div className='row'>
       {props.profiles && props.user && quizzes ? loaded() : loading()}
       </div>
