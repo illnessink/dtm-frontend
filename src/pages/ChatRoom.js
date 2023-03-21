@@ -31,10 +31,7 @@ const profile2 = profiles ? profiles.find((p) => p.uid === id2) : null;
 const loaded = () => {
   return (
     <div className="chatroom">
-        <div className='chat-header'>
-          <h1>Go on, get to know {profile2.displayName}</h1>
-          
-        </div>
+        
         <Chat id1={id1} id2={id2} name1={profile1.displayName} name2={profile2.displayName} pic1={profile1.photo} pic2={profile2.photo} user={props.user} />
       
     </div>

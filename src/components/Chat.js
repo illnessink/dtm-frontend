@@ -110,11 +110,21 @@ function Chat({ id1, id2, name1, name2, pic1, pic2, user }) {
 //   }, [socket]);
 
   return (
+<>
+    <div className='chat-header'>
+                <h1>Go on, get to know <img src={pic2} alt={name2} className={
+                  messages.length > 20 ? 'no-blur':
+                  messages.length > 10 ? 'half-blur':
+                  'all-blur'
+                } /> {name2}</h1>
+                
+              </div>
     <div className="chat-window">
       <div className="chat-body">
         <ScrollToBottom className="message-container">
           {messages.map((messageContent) => {
             return (
+              
               <div
                 className="message"
                 id={messageContent.myself ? "you" : "other"}
@@ -143,10 +153,11 @@ function Chat({ id1, id2, name1, name2, pic1, pic2, user }) {
           onKeyPress={(event) => {
             event.key === "Enter" && sendMessage();
           }}
-        />
+          />
         <button type="submit" onClick={sendMessage}>&#9658;</button>
       </div>
     </div>
+          </>
   );
 }
 
