@@ -25,19 +25,21 @@ The user can select one of the matches, see the matches information (name, age, 
 
 # Technologies Used
 
-CSS 
-Javascript 
-HTML
-React
-Node.js
-Bootstrap
-Firebase
-Ajax
-Cloudinary
-Express
-MongoDB
-Heroku
-Git
++CSS 
++Javascript 
++HTML
++React
++Node.js
++Bootstrap
++Firebase
++Ajax
++Cloudinary
++Express
++MongoDB
++Heroku
++Git
++Socket.io
++Surveyjs.io
 
 # Pages and Functionality
 
@@ -67,6 +69,11 @@ User should be able to click on the "My Matches" tab to see all other users who 
 Once user clicks on a specific match, user should be able to see the their matches profile and details. User should also be able initiate a chat with that match 
 
 ![image](https://user-images.githubusercontent.com/97205531/226738927-9e1d104d-7285-475e-abe4-1bddae1f74b3.png)
+
+User should be able to chat with their match and recive a message back
+
+![image](https://user-images.githubusercontent.com/97205531/226739645-6dadf223-dc0f-445b-bf77-88b2714118a8.png)
+
 
 # Original Wire Frame 
 
