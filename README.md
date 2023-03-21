@@ -1,3 +1,27 @@
+DTM --> DOWN TO MATCH
+
+SEI Project 3
+Creators: Molly, Vanessa, Samantha & Dana
+
+Link to site: https://downtomatch.netlify.app/
+
+
+![Screen Shot 2023-03-21 at 10 27 06 AM](https://user-images.githubusercontent.com/97205531/226637444-283c6424-1878-4b1f-afb7-2a6b5c9e3de5.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
